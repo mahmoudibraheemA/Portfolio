@@ -14,7 +14,7 @@ namespace Infrastructure.Unitofwork
         {
             _context = context;
         }
-        public IGenericRepo<T> Entity 
+        public IGenericRepo<T> entity 
         {
             get
             {
@@ -22,7 +22,7 @@ namespace Infrastructure.Unitofwork
             }
         }
 
-        public IGenericRepo<T> entity => throw new NotImplementedException();
+        
 
         public void Save()
         {

@@ -1,4 +1,6 @@
+using Core.Interfaces;
 using Infrastructure;
+using Infrastructure.Unitofwork;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -29,6 +31,8 @@ namespace Web
             {
                 options.UseSqlServer(configuration.GetConnectionString("PortfolioDB"));
             });
+
+            services.AddScoped(typeof(IUnitofwork<>), typeof(Unitofwork<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
